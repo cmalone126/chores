@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Malone Rules</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet"
+        href=	"https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+  <script src="{{url_for('static', filename='jquery-3.6.0.min.js'}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>li.hidden{
+		visibility: hidden;
+	}</style>
+</head>
+<body>
+<div class="jumbotron text-center">
+  <h1>The Malone Chore Page</h1>
+  <p>{{quote}}</p> 
+</div>
+
+
+<nav class="navbar navbar-expand-sm bg-dark">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Malone Chores</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li>
+  			<a class="navbar-brand" 
+						href="{{url_for('main_web_page')}}">
+						Open Chores<span class="badge">{{choreCount}}</span></a>
+			</li>
+			<li>
+  			<a class="navbar-brand" href="{{url_for('newChore')}}">New Chore</a>
+			</li>
+			<li>
+				<a class="navbar-brand" href="{{url_for('quickChore')}}">Quick Chore</a>
+			</li>
+			<li class="hidden">
+				<a class="navbar-brand" href="{{url_for('storeList')}}">Store List</a>
+			</li>
+		</ul>
+	</div>
+</nav>  
+{% block content %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content %}	
+<style>
+	div {text-align: center;
+			padding-top: 30px;}
+	
+</style>
+<script>
+	function quickChore(chore){
+		document.getElementById("message").innerHTML=chore;
+		
+}
+		
+</script>
+<div>
+	<button type="button" onclick="quickChore('Chickens')">Chickens</button>
+	<p id="message"><p>
+</div>
+
+{% endblock %}
