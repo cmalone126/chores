@@ -76,8 +76,9 @@ def newChore():
             return redirect('/')
     elif request.method == 'GET':
         choreCount = choreDB.choreCount()
-        return render_template('newChore.html', choreCount = choreCount,\
-            form = form)
+        return render_template('newChore.html', choreCount = choreCount, form = form)
+
+
 
 @app.route('/quickChore', methods = ['GET','POST'])
 def quickChore():
